@@ -83,4 +83,83 @@
     }
 
     h2 {
-      color: #25d366; /* Verde
+      color: #25d366; /* Verde para subtítulos */
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .cta-button {
+      background-color: #25d366; /* Verde del botón */
+      color: white;
+      padding: 18px 40px; /* Botón más grande */
+      font-size: 18px; /* Texto más grande */
+      font-weight: bold;
+      border: none;
+      border-radius: 30px; /* Botón más redondeado */
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px; /* Espacio entre botón y la caja */
+      animation: pulse 1.5s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .cta-box {
+      background-color: #ffffff; /* Fondo blanco */
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #111b21; /* Texto oscuro */
+      border: 1px solid #dddddd; /* Borde gris claro */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      margin-top: 60px;
+      padding-bottom: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://static.whatsapp.net/rsrc.php/yZ/r/JvsnINJ2CZv.svg" alt="WhatsApp" />
+  </header>
+
+  <main>
+    <div class="logo-circle">
+      <img src="https://i.imgur.com/EmENkHK.jpeg" alt="Nueva Imagen" />
+    </div>
+
+    <h1>BONUS DEL 200%🎁</h1>
+    <h2>🏆CARG4S 2.000 RECIBIS 6.000🏆</h2>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.link/montancas" 
+       class="cta-button" 
+       onclick="fbq('track', 'Lead');">
+       Ir a WhatsApp Ahora
+    </a>
+
+    <!-- Caja de texto -->
+    <div class="cta-box">
+      Te estamos conectando con nuestro equipo vía WhatsApp.
+    </div>
+  </main>
+
+  <footer>
+    © 2025 MONTANA RED. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
