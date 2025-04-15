@@ -6,6 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
 
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () { n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1368273631084234'); // Pixel ID de Montana
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1368273631084234&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
     <style>
         /* General styles */
         * {
@@ -56,11 +75,17 @@
             display: inline-block;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            transition: transform 0.2s ease-in-out;
+            animation: pop 1.5s infinite ease-in-out; /* Animación constante */
         }
 
-        .cta-button:hover {
-            transform: scale(1.05);
+        /* Animación de pop */
+        @keyframes pop {
+            0%, 100% {
+                transform: scale(1); /* Tamaño normal */
+            }
+            50% {
+                transform: scale(1.1); /* Crece un 10% */
+            }
         }
 
         .bono-bar {
@@ -80,6 +105,63 @@
             font-size: 0.9rem;
             color: white;
         }
+
+        /* Notificaciones dinámicas */
+        .xpo-notification-wrap {
+            position: fixed;
+            bottom: 100px;
+            left: 20px;
+            background: #1e1e1e;
+            color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            width: 280px;
+            z-index: 9999;
+            border: 1px solid #333;
+            backdrop-filter: blur(6px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .xpo-notification-wrap.show {
+            opacity: 1;
+        }
+
+        .xpo-img-wrap img {
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 1px solid #444;
+        }
+
+        .xpo-col {
+            margin-left: 12px;
+        }
+
+        .xpo-notification-name {
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #fff;
+        }
+
+        .xpo-notification-product {
+            font-size: 0.85em;
+            color: #22d3ee;
+        }
+
+        .xpo-location {
+            font-size: 0.75em;
+            color: #cbd5e1;
+        }
+
+        .xpo-location::before {
+            content: "📍";
+            margin-right: 4px;
+        }
     </style>
 </head>
 
@@ -94,8 +176,8 @@
         <!-- Subtítulo -->
         <h2>🍀 Carg4s 2.000 y recibís 6.000</h2>
 
-        <!-- Botón de llamado a la acción -->
-        <a href="https://wa.link/montancas" class="cta-button" target="_blank">CLICK PARA IR A WHATSAPP</a>
+        <!-- Botón de llamado a la acción con evento Contact -->
+        <a href="https://wa.link/montancas" class="cta-button" target="_blank" onclick="fbq('track', 'Contact');">CLICK PARA IR A WHATSAPP</a>
     </div>
 
     <!-- Barra fija -->
