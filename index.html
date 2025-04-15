@@ -21,7 +21,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
             text-align: center;
             padding: 20px;
         }
@@ -35,6 +36,12 @@
             width: 100%;
             max-width: 300px; /* Tamaño máximo de la imagen */
             margin: 0 auto 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 10px 0 20px;
+            color: #ffd700; /* Amarillo dorado */
         }
 
         .cta-button {
@@ -55,6 +62,24 @@
         .cta-button:hover {
             transform: scale(1.05);
         }
+
+        .bono-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #16a34a; /* Verde de fondo */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: white;
+        }
     </style>
 </head>
 
@@ -66,9 +91,22 @@
             <img src="https://i.imgur.com/BEULYVJ.png" alt="Imagen de Mega Candy">
         </div>
 
+        <!-- Subtítulo -->
+        <h2>🍀 Carg4s 2.000 y recibís 6.000</h2>
+
         <!-- Botón de llamado a la acción -->
         <a href="https://wa.link/montancas" class="cta-button" target="_blank">CLICK PARA IR A WHATSAPP</a>
     </div>
+
+    <!-- Barra fija -->
+    <div class="bono-bar">
+        🎁 Tu usuario GRATIS y al instante 🎁
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        © Montana Online todos los derechos reservados.
+    </footer>
 </body>
 
 </html>
