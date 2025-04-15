@@ -51,20 +51,34 @@
             width: 100%;
         }
 
-        .logo-whatsapp img {
-            width: 60px;
+        .logo-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 10px; /* Espacio reducido */
+        }
+
+        .logo-whatsapp img {
+            width: 50px; /* Tamaño reducido del logo */
+            margin-right: 10px;
+        }
+
+        .logo-whatsapp span {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #25d366; /* Color verde de WhatsApp */
         }
 
         .logo img {
             width: 100%;
-            max-width: 350px; /* Imagen grande */
-            margin: 0 auto 15px; /* Espacio reducido */
+            max-width: 400px; /* Imagen del centro agrandada */
+            margin: 0 auto 10px; /* Espacio reducido */
         }
 
         h2 {
             font-size: 1.3rem;
-            margin: 10px 0 15px; /* Espacio reducido entre título y subtítulo */
+            margin: 5px 0 15px; /* Espacio reducido entre subtítulo y logo */
             color: #ffd700; /* Amarillo dorado */
         }
 
@@ -116,9 +130,10 @@
 </head>
 
 <body>
-    <!-- Logo de WhatsApp en la parte superior -->
+    <!-- Logo de WhatsApp con texto al lado -->
     <div class="logo-whatsapp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Logo de WhatsApp">
+        <span>WhatsApp</span>
     </div>
 
     <!-- Contenedor principal -->
