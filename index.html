@@ -4,26 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Mega Candy</title>
-
-    <!-- Meta Pixel Code -->
-    <script>
-        !function(f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () { n.callMethod ?
-            n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1368273631084234'); // Pixel ID de Montana
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1368273631084234&ev=PageView&noscript=1" />
-    </noscript>
-    <!-- End Meta Pixel Code -->
+    <title>Landing Page</title>
 
     <style>
         /* General styles */
@@ -34,44 +15,26 @@
         }
 
         body {
-            background-color: #0c0c0c; /* Fondo oscuro */
+            background-color: #5b0eeb; /* Fondo violeta */
             color: white;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
+            height: 100vh;
             text-align: center;
+            padding: 20px;
         }
 
         .container {
             max-width: 400px;
             width: 100%;
-            padding: 20px;
         }
 
         .logo img {
-            width: 180px;
+            width: 100%;
+            max-width: 300px; /* Tamaño máximo de la imagen */
             margin: 0 auto 20px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #ffd700; /* Amarillo dorado */
-        }
-
-        h2 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .cta {
-            margin: 20px 0;
-            font-size: 1rem;
-            color: #ffa500; /* Naranja brillante */
         }
 
         .cta-button {
@@ -92,65 +55,19 @@
         .cta-button:hover {
             transform: scale(1.05);
         }
-
-        .verified {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #00e676; /* Verde de verificación */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .verified img {
-            width: 16px;
-            height: 16px;
-            margin-right: 5px;
-        }
-
-        /* Responsive design */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                font-size: 1rem;
-                padding: 12px 20px;
-            }
-        }
     </style>
 </head>
 
 <body>
     <!-- Contenedor principal -->
     <div class="container">
-        <!-- Logo -->
+        <!-- Imagen centrada -->
         <div class="logo">
-            <img src="https://i.imgur.com/EmENkHK.jpeg" alt="Mega Candy Logo">
+            <img src="https://i.imgur.com/BEULYVJ.png" alt="Imagen de Mega Candy">
         </div>
 
-        <!-- Título -->
-        <h1>BONO DEL 200%</h1>
-
-        <!-- Subtítulo -->
-        <h2>🔥 ¡CARG4S 1.500 RECIBIS 4.500!!</h2>
-
-        <!-- Llamado a la acción -->
-        <p class="cta">Escríbinos ahora apretando en el botón de abajo</p>
-
-        <!-- Botón de WhatsApp -->
-        <a href="https://wa.link/montancas" class="cta-button" onclick="fbq('track', 'Contact');">WhatsApp</a>
-
-        <!-- Verificación -->
-        <div class="verified">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Verificado">
-            Verificado por WhatsApp
-        </div>
+        <!-- Botón de llamado a la acción -->
+        <a href="https://wa.link/montancas" class="cta-button" target="_blank">CLICK PARA IR A WHATSAPP</a>
     </div>
 </body>
 
