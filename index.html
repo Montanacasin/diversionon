@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - BONUS DE BIENVENIDA</title>
+    <title>Landing Page - Mega Candy</title>
 
-    <!-- Meta Pixel Code Montana -->
+    <!-- Meta Pixel Code -->
     <script>
         !function(f, b, e, v, n, t, s) {
-            if(f.fbq) return; n=f.fbq=function(){n.callMethod ?
-            n.callMethod.apply(n, arguments) : n.queue.push(arguments)};
-            if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
-            n.queue=[]; t=b.createElement(e); t.async=!0;
-            t.src=v; s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)
-        }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1368273631084234'); // Pixel de Meta Montana
+            if (f.fbq) return; n = f.fbq = function () { n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1368273631084234'); // Pixel ID de Montana
         fbq('track', 'PageView');
     </script>
     <noscript>
@@ -26,162 +26,132 @@
     <!-- End Meta Pixel Code -->
 
     <style>
+        /* General styles */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', sans-serif;
+            box-sizing: border-box;
         }
 
         body {
-            background-color: #ffffff;
-            color: #111b21;
-            margin: 0;
-            padding: 20px;
+            background-color: #0c0c0c; /* Fondo oscuro */
+            color: white;
+            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
         }
 
         .container {
-            text-align: center;
+            max-width: 400px;
+            width: 100%;
             padding: 20px;
-            max-width: 600px;
-            margin: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+        }
+
+        .logo img {
+            width: 180px;
+            margin: 0 auto 20px;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffd700; /* Amarillo dorado */
         }
 
-        p {
-            font-size: 1.2em;
+        h2 {
+            font-size: 1.2rem;
             margin-bottom: 20px;
+            color: #ffffff;
         }
 
-        .whatsapp-logo {
-            width: 50px;
-            margin-bottom: 20px;
+        .cta {
+            margin: 20px 0;
+            font-size: 1rem;
+            color: #ffa500; /* Naranja brillante */
         }
 
         .cta-button {
-            background-color: #25d366; /* Color de WhatsApp */
+            background-color: #25d366; /* Verde WhatsApp */
             color: white;
-            padding: 15px 30px;
-            font-size: 1.2em;
             font-weight: bold;
+            padding: 15px 30px;
+            font-size: 1.2rem;
             border: none;
-            border-radius: 25px;
+            border-radius: 50px;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
+            transition: transform 0.2s ease-in-out;
         }
 
         .cta-button:hover {
-            background-color: #128c7e; /* Color más oscuro al pasar el cursor */
+            transform: scale(1.05);
         }
 
-        footer {
-            text-align: center;
-            font-size: 13px;
-            color: #999;
-            margin-top: 60px;
-            padding-bottom: 80px;
-        }
-
-        /* Estilos para las notificaciones */
-        .xpo-notification-wrap {
-            position: fixed;
-            background: #1e1e1e;
-            color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            padding: 10px 14px;
+        .verified {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #00e676; /* Verde de verificación */
             display: flex;
             align-items: center;
-            width: 280px;
-            z-index: 9999;
-            border: 1px solid #333;
-            backdrop-filter: blur(6px);
-            opacity: 0;
-            left: -300px;
-            bottom: 100px;
-            transition: all 0.5s ease;
+            justify-content: center;
         }
 
-        .xpo-notification-wrap.show {
-            left: 20px;
-            opacity: 1;
+        .verified img {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
         }
 
-        .xpo-img-wrap img {
-            width: 42px;
-            height: 42px;
-            border-radius: 6px;
-            object-fit: cover;
-            border: 1px solid #444;
-        }
+        /* Responsive design */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
 
-        .xpo-col {
-            margin-left: 12px;
-        }
+            h2 {
+                font-size: 1rem;
+            }
 
-        .xpo-notification-name {
-            font-weight: bold;
-            font-size: 0.9em;
-            color: #fff;
+            .cta-button {
+                font-size: 1rem;
+                padding: 12px 20px;
+            }
         }
-
-        .xpo-notification-product {
-            font-size: 0.85em;
-            color: #22d3ee;
-        }
-
-        .xpo-location {
-            font-size: 0.75em;
-            color: #cbd5e1;
-        }
-
-        .xpo-location::before {
-            content: "📍";
-            margin-right: 4px;
-        }
-
     </style>
 </head>
 
 <body>
     <!-- Contenedor principal -->
     <div class="container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="https://i.imgur.com/EmENkHK.jpeg" alt="Mega Candy Logo">
+        </div>
 
-        <!-- Título actualizado -->
-        <h1>🎰BONUS DEL 200% ACTIVO 🎰</h1>
+        <!-- Título -->
+        <h1>BONO DEL 200%</h1>
 
-        <!-- Subtítulo actualizado -->
-        <p>🏆 Encontra los mejores Sl0ts y atención 24 horas 🏆</p>
+        <!-- Subtítulo -->
+        <h2>🔥 ¡CARG4S 1.500 RECIBIS 4.500!!</h2>
 
-        <!-- Botón de llamada a la acción -->
-        <a href="https://wa.link/montancas" class="cta-button" target="_blank" onclick="fbq('track', 'Contact');">CHATEAR EN WHATSAPP</a>
+        <!-- Llamado a la acción -->
+        <p class="cta">Escríbinos ahora apretando en el botón de abajo</p>
+
+        <!-- Botón de WhatsApp -->
+        <a href="https://wa.link/montancas" class="cta-button" onclick="fbq('track', 'Contact');">WhatsApp</a>
+
+        <!-- Verificación -->
+        <div class="verified">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Verificado">
+            Verificado por WhatsApp
+        </div>
     </div>
-
-    <!-- Barra fija -->
-    <div class="bono-bar" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #16a34a; color: white; text-align: center; padding: 10px; font-weight: bold;">
-        🎁Tu usuario GRATIS y al instante🎁
-    </div>
-
-    <!-- Pie de página -->
-    <footer>
-        Montana todos los derechos reservados.
-    </footer>
 </body>
 
 </html>
